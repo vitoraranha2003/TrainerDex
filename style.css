@@ -55,15 +55,15 @@ h1 {
 }
 
 .grass {
-  background: linear-gradient(to right,#6bec14, #55c40c);
+  background: linear-gradient(to right,#6bec14, #48a708);
 }
 
 .electric {
-  background-color: #ffe357;
+  background: linear-gradient(to right,#fcec9f, #eebc31);
 }
 
 .water{
-  background-color: #def3fd;
+  background: linear-gradient(to right,#69c5e9, #057baa);
 }
 
 .ice {
@@ -75,7 +75,7 @@ h1 {
 }
 
 .rock {
-  background: linear-gradient(to right, #7a6f61, #8a663b);
+  background: linear-gradient(to right, #7a6f61, #694a25);
 }
 
 .fairy {
@@ -194,8 +194,12 @@ h1 {
 #close-menu {
   margin-top: 20px;
   padding: 10px;
-  background-color: #ff6347;
-  border: none;
   color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  font-size: 24px;
 }

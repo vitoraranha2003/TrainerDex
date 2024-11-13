@@ -2,6 +2,9 @@ const trainersData = [
   { id: 1, name: "Red", types: [{ type: { name: "champion" } }] },
   { id: 2, name: "Blue", types: [{ type: { name: "champion" } }] },
   { id: 3, name: "Brock", types: [{ type: { name: "rock" } }] },
+  { id: 4, name: "Misty", types: [{ type: { name: "water" } }] },
+  { id: 5, name: "Lt. Surge", types: [{ type: { name: "electric" } }] },
+  { id: 6, name: "Erika", types: [{ type: { name: "grass" } }] },
 ];
 
 const generateTrainersPromises = () => trainersData;
