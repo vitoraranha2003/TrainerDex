@@ -5,6 +5,10 @@ const trainersData = [
   { id: 4, name: "Misty", types: [{ type: { name: "water" } }] },
   { id: 5, name: "Lt. Surge", types: [{ type: { name: "electric" } }] },
   { id: 6, name: "Erika", types: [{ type: { name: "grass" } }] },
+  { id: 7, name: "Koga", types: [{ type: { name: "poison" } }] },
+  { id: 8, name: "Sabrina", types: [{ type: { name: "psychic" } }] },
+  { id: 9, name: "Blaine", types: [{ type: { name: "fire" } }] },
+  { id: 10, name: "Giovanni", types: [{ type: { name: "teamRocket" } }] },
 ];
 
 const generateTrainersPromises = () => trainersData;
@@ -30,37 +34,70 @@ const insertTrainersIntoPage = (trainers) => {
 };
 
 const TrainersPromises = generateTrainersPromises();
-
 const html = generateHTML(TrainersPromises);
 insertTrainersIntoPage(html);
 
-const menu = document.getElementById('trainer-menu');
-const trainerName = document.getElementById('trainer-name');
-const trainerInfo = document.getElementById('trainer-info');
-const closeMenu = document.getElementById('close-menu');
-const trainerImage = document.getElementById('trainer-image');
+const menu = document.getElementById("trainer-menu");
+const trainerName = document.getElementById("trainer-name");
+const trainerInfo = document.getElementById("trainer-info");
+const closeMenu = document.getElementById("close-menu");
+const trainerImage = document.getElementById("trainer-image");
+
+let currentTrainerId = null;
+
+const showTrainerDetails = (id) => {
+  const selectedTrainer = trainersData.find((trainer) => trainer.id == id);
+
+  trainerName.textContent = selectedTrainer.name;
+  trainerInfo.textContent = `Type: ${selectedTrainer.types
+    .map((typeInfo) => typeInfo.type.name)
+    .join(", ")}`;
+
+  trainerImage.src = `./images/tc${selectedTrainer.id}.png`;
+  trainerImage.alt = `${selectedTrainer.name}`;
+
+  menu.classList.add("open");
+  currentTrainerId = id;
+};
 
 const addClickEventToCards = () => {
-  const cards = document.querySelectorAll('.card');
-  
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      const id = card.getAttribute('data-id');
-      const selectedTrainer = trainersData.find(trainer => trainer.id == id);
-      
-      trainerName.textContent = selectedTrainer.name;
-      trainerInfo.textContent = `Type: ${selectedTrainer.types.map(typeInfo => typeInfo.type.name).join(", ")}`;
-      
-      trainerImage.src = `./images/tc${selectedTrainer.id}.png`;
-      trainerImage.alt = `${selectedTrainer.name}`;
+  const cards = document.querySelectorAll(".card");
 
-      menu.classList.add('open');
+  cards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const id = parseInt(card.getAttribute("data-id"));
+      showTrainerDetails(id);
     });
   });
 };
 
 addClickEventToCards();
 
-closeMenu.addEventListener('click', () => {
-  menu.classList.remove('open');
+closeMenu.addEventListener("click", () => {
+  menu.classList.remove("open");
+});
+
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+
+previousButton.addEventListener("click", () => {
+  if (currentTrainerId === null) return;
+
+  if (currentTrainerId > 1) {
+    currentTrainerId--;
+  } else {
+    currentTrainerId = trainersData.length;
+  }
+  showTrainerDetails(currentTrainerId);
+});
+
+nextButton.addEventListener("click", () => {
+  if (currentTrainerId === null) return;
+
+  if (currentTrainerId < trainersData.length) {
+    currentTrainerId++;
+  } else {
+    currentTrainerId = 1;
+  }
+  showTrainerDetails(currentTrainerId);
 });

@@ -2,34 +2,35 @@ body {
   background: linear-gradient(to right, #d4d3dd, #efefbb);
   margin: 0;
   font-family: rubik;
+  overflow-x: hidden;
 }
 
 .container {
-  padding: 40px;
+  padding: 20px;
   margin: 0 auto;
+  max-width: 1200px;
 }
 
 h1 {
   text-align: center;
-  font-size: 65px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
 .trainerdex {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
   padding-inline-start: 0;
 }
 
 .card {
   list-style: none;
-  padding: 40px;
+  padding: 20px;
   color: #222;
   text-align: center;
   border-radius: 20px;
   position: relative;
-  
 }
 
 .card::after {
@@ -43,7 +44,7 @@ h1 {
   position: absolute;
   top: 15%;
   left: 19%;
-  z-index: 1; 
+  z-index: 1;
 }
 
 .steel {
@@ -51,19 +52,19 @@ h1 {
 }
 
 .fire {
-  background: linear-gradient(to right, #d83333, #e4db5f);
+  background: linear-gradient(to right, #d41f1f, #e4db5f);
 }
 
 .grass {
-  background: linear-gradient(to right,#6bec14, #48a708);
+  background: linear-gradient(to right, #6bec14, #48a708);
 }
 
 .electric {
-  background: linear-gradient(to right,#fcec9f, #eebc31);
+  background: linear-gradient(to right, #ffcc41, #f8cd57);
 }
 
-.water{
-  background: linear-gradient(to right,#69c5e9, #057baa);
+.water {
+  background: linear-gradient(to right, #69c5e9, #057baa);
 }
 
 .ice {
@@ -71,7 +72,7 @@ h1 {
 }
 
 .ground {
-  background-color: #f4e7da;
+  background: linear-gradient(to right, #e9c562, #a17807);
 }
 
 .rock {
@@ -83,7 +84,7 @@ h1 {
 }
 
 .poison {
-  background-color: #c4add6;
+  background: linear-gradient(to right, #bd80da, #a61fe4);
 }
 
 .bug {
@@ -95,7 +96,7 @@ h1 {
 }
 
 .psychic {
-  background-color: #eaeda1;
+  background: linear-gradient(to right, #e25fa1, #e70476);
 }
 
 .flying {
@@ -123,14 +124,20 @@ h1 {
   background: linear-gradient(to right, #fff12b, #cec333);
 }
 
+.teamRocket{
+  background: linear-gradient(to right, #585454, #383535);
+  color: rgb(216, 52, 52);
+}
+
 .card:hover {
   animation: bounce 0.5s linear;
 }
 
+
 .card-title {
   text-transform: capitalize;
   margin-bottom: 0px;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-weight: normal;
   position: relative;
   z-index: 2;
@@ -144,7 +151,7 @@ h1 {
 }
 
 .card-image {
-  height: 180px;
+  height: 150px;
   position: relative;
   z-index: 2;
 }
@@ -202,4 +209,45 @@ h1 {
   border: none;
   cursor: pointer;
   font-size: 24px;
+}
+
+#previous,
+#next {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ff6347;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  .card {
+    padding: 15px;
+  }
+  .card-title {
+    font-size: 1.2rem;
+  }
+  .card-image {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .card {
+    padding: 10px;
+  }
+  .card-title {
+    font-size: 1rem;
+  }
+  .card-image {
+    height: 100px;
+  }
 }
