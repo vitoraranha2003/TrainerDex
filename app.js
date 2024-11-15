@@ -9,6 +9,11 @@ const trainersData = [
   { id: 8, name: "Sabrina", types: [{ type: { name: "psychic" } }] },
   { id: 9, name: "Blaine", types: [{ type: { name: "fire" } }] },
   { id: 10, name: "Giovanni", types: [{ type: { name: "teamRocket" } }] },
+  { id: 11, name: "Lorelei", types: [{ type: { name: "ice" } }] },
+  { id: 12, name: "Bruno", types: [{ type: { name: "fight" } }] },
+  { id: 13, name: "Agatha", types: [{ type: { name: "ghost" } }] },
+  { id: 14, name: "Lance", types: [{ type: { name: "dragon" } }] },
+  { id: 15, name: "Jessie & James", types: [{ type: { name: "teamRocket" } }] },
 ];
 
 const generateTrainersPromises = () => trainersData;

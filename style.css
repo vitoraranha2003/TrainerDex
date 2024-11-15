@@ -68,7 +68,7 @@ h1 {
 }
 
 .ice {
-  background-color: #def3fd;
+  background: linear-gradient(to right, #8ccce5, #add6e6);
 }
 
 .ground {
@@ -92,7 +92,7 @@ h1 {
 }
 
 .dragon {
-  background: linear-gradient(to right, #1f5bcc, #2a4a86);
+  background: linear-gradient(to right, #1f5bcc, #1e3d77);
 }
 
 .psychic {
@@ -108,12 +108,16 @@ h1 {
 }
 
 .ghost {
-  background: linear-gradient(to right, #7d0fc7, #4c017e);
+  background: linear-gradient(to right, #7d0fc7, #340057);
 }
 
 .normal {
   background-color: #c7c4c4;
   background: linear-gradient(to right, #c7c4c4, #e2dfdf);
+}
+
+.fight {
+  background: linear-gradient(to right, rgb(211, 111, 80), rgb(187, 58, 18));
 }
 
 .dark {
