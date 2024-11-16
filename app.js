@@ -14,6 +14,11 @@ const trainersData = [
   { id: 13, name: "Agatha", types: [{ type: { name: "ghost" } }] },
   { id: 14, name: "Lance", types: [{ type: { name: "dragon" } }] },
   { id: 15, name: "Jessie & James", types: [{ type: { name: "teamRocket" } }] },
+  { id: 16, name: "Gold", types: [{ type: { name: "champion" } }] },
+  { id: 17, name: "Silver", types: [{ type: { name: "rival" } }] },
+  { id: 18, name: "Falkner", types: [{ type: { name: "flying" } }] },
+  { id: 19, name: "Bugsy", types: [{ type: { name: "bug" } }] },
+  { id: 20, name: "Whitney", types: [{ type: { name: "normal" } }] },
 ];
 
 const generateTrainersPromises = () => trainersData;

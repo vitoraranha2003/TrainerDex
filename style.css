@@ -88,7 +88,7 @@ h1 {
 }
 
 .bug {
-  background-color: #f8d5a3;
+  background: linear-gradient(to right, #a5c559, #86b419);
 }
 
 .dragon {
@@ -100,11 +100,7 @@ h1 {
 }
 
 .flying {
-  background-color: #f5f5f5;
-}
-
-.fighting {
-  background-color: #e6e0d4;
+  background: linear-gradient(to right, #d4c6e4, #c9abeb);
 }
 
 .ghost {
@@ -112,8 +108,7 @@ h1 {
 }
 
 .normal {
-  background-color: #c7c4c4;
-  background: linear-gradient(to right, #c7c4c4, #e2dfdf);
+  background: linear-gradient(to right, #e9e6e6, #e2dfdf);
 }
 
 .fight {
@@ -124,8 +119,12 @@ h1 {
   background: linear-gradient(to right, rgb(36, 33, 33), #b3aeae);
 }
 
+.rival {
+  background: linear-gradient(to right, #DCD8D8, #B8B8B8);
+}
+
 .champion {
-  background: linear-gradient(to right, #fff12b, #cec333);
+  background: linear-gradient(to right, #FFF200, #E2BE05);
 }
 
 .teamRocket{
